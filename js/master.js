@@ -179,7 +179,7 @@
       mdiv4.style.transform = 'rotate(-5deg) translateX('+ -(wsn/44) +'px)'
     }
 
-  if ((wsn-400) > wso) {
+  if ((wsn-600) > wso) {
     mslide.style.transform = "translateX(-300px)";
     mdiv1.style.transform = 'rotate(10deg) translate3d(800px, 0px, 0px)'
     mdiv2.style.transform = 'rotate(10deg) translate3d(-800px, 0px, 0px)'
@@ -196,7 +196,7 @@
     mdiv4.style.transform = 'rotate(-5deg) translateX('+ -(wsn/44) +'px)'
   }
 
-if ((wsn-500) > wso) {
+if ((wsn-900) > wso) {
     mslide.style.transform = "translateX(-300px)";
     mdiv1.style.transform = 'rotate(10deg) translate3d(800px, 0px, 0px)'
     mdiv2.style.transform = 'rotate(10deg) translate3d(-800px, 0px, 0px)'
