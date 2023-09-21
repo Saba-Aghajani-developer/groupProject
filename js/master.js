@@ -167,9 +167,7 @@
       mdiv1.style.transform = 'rotate(10deg) translate3d(800px, 0px, 0px)'
       mdiv2.style.transform = 'rotate(10deg) translate3d(-800px, 0px, 0px)'
       mdiv3.style.transform = 'rotate(10deg) translate3d(800px, 0px, 0px)'
-      mfig1.style.transform = "translateX("+ (100)+"%)";
-      mfig2.style.transform = "translateX("+ (100)+"%)";
-      mfig3.style.transform = "translateX("+ (100)+"%)";
+      mfig1.style.transform = "translateX("+ (50)+"%)";
       mdiv4.style.transform = 'rotate(-5deg) translateX('+ wsn/200 +'px)'
    
     } else {
@@ -178,10 +176,42 @@
       mdiv2.style.transform = 'rotate(10deg) translate3d(800px, 0px, 0px)'
       mdiv3.style.transform = 'rotate(10deg) translate3d(-800px, 0px, 0px)'
       mfig1.style.transform = "translateX("+ (0)+"%)";
-      mfig2.style.transform = "translateX("+ (0)+"%)";
-      mfig3.style.transform = "translateX("+ (0)+"%)";
       mdiv4.style.transform = 'rotate(-5deg) translateX('+ -(wsn/44) +'px)'
     }
+
+  if ((wsn-300) > wso) {
+    mslide.style.transform = "translateX(-300px)";
+    mdiv1.style.transform = 'rotate(10deg) translate3d(800px, 0px, 0px)'
+    mdiv2.style.transform = 'rotate(10deg) translate3d(-800px, 0px, 0px)'
+    mdiv3.style.transform = 'rotate(10deg) translate3d(800px, 0px, 0px)'
+    mfig2.style.transform = "translateX("+ (50)+"%)";
+    mdiv4.style.transform = 'rotate(-5deg) translateX('+ wsn/200 +'px)'
+    
+  } else {
+    mslide.style.transform = "translateX(-200px)";
+    mdiv1.style.transform = 'rotate(10deg) translate3d(-800px, 0px, 0px)'
+    mdiv2.style.transform = 'rotate(10deg) translate3d(800px, 0px, 0px)'
+    mdiv3.style.transform = 'rotate(10deg) translate3d(-800px, 0px, 0px)'
+    mfig2.style.transform = "translateX("+ (0)+"%)";
+    mdiv4.style.transform = 'rotate(-5deg) translateX('+ -(wsn/44) +'px)'
+  }
+
+if ((wsn-300) > wso) {
+    mslide.style.transform = "translateX(-300px)";
+    mdiv1.style.transform = 'rotate(10deg) translate3d(800px, 0px, 0px)'
+    mdiv2.style.transform = 'rotate(10deg) translate3d(-800px, 0px, 0px)'
+    mdiv3.style.transform = 'rotate(10deg) translate3d(800px, 0px, 0px)'
+    mfig3.style.transform = "translateX("+ (50)+"%)";
+    mdiv4.style.transform = 'rotate(-5deg) translateX('+ wsn/200 +'px)'
+    
+  } else {
+    mslide.style.transform = "translateX(-200px)";
+    mdiv1.style.transform = 'rotate(10deg) translate3d(-800px, 0px, 0px)'
+    mdiv2.style.transform = 'rotate(10deg) translate3d(800px, 0px, 0px)'
+    mdiv3.style.transform = 'rotate(10deg) translate3d(-800px, 0px, 0px)'
+    mfig3.style.transform = "translateX("+ (0)+"%)";
+    mdiv4.style.transform = 'rotate(-5deg) translateX('+ -(wsn/44) +'px)'
+  }
   wso = wsn;
 });
   //  ************************finish of mobina js part ***************************
