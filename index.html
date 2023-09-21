@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/logo.png">
+    <link rel="stylesheet" href="master/css/style.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        /* part1  */
+        nav {
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            overflow: hidden !important
+        }
+
+        /* menu  */
+        header {
+            width: 100%;
+            height: 90px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 12000;
+
+        }
+
+        .logo {
+            width: 80px;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 20px;
+        }
+
+        .logo>img {
+            width: 80%;
+            height: 80%;
+            object-fit: cover;
+        }
+
+        .menu {
+            width: 27vw;
+            height: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100px;
+            margin: 20px;
+        }
+
+        .menu>span {
+            width: 25%;
+            height: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+            font-family: 'Varela Round', sans-serif40;
+            cursor: pointer;
+            color: white;
+        }
+
+        .bigMenu {
+            width: 0;
+            height: 0;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 101;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            transition: .5s;
+            border-radius: 0 0 0 100%;
+        }
+
+        .bigMenu>ul {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-wrap: wrap;
+            margin-left: 35%;
+            margin-top: -17%;
+        }
+
+        .bigMenu>ul>li {
+            width: 100%;
+            height: 17%;
+            list-style-type: none;
+            font-family: 'Varela Round', sans-serif;
+            text-transform: capitalize;
+            font-size: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            cursor: pointer;
+        }
+
+        #menu {
+            position: relative;
+        }
+
+        #menu>* {
+            position: absolute;
+            top: 20%;
+            left: 20%;
+        }
+
+        #menu>svg:last-of-type {
+            display: none;
+            transform: rotate(45deg);
+        }
+
+        #m1,
+        #m2,
+        #m3,
+        #menu,
+        .menu {
+            transition: .4s;
+        }
+
+        /* slider  */
+        .slider {
+            width: auto;
+            height: 70%;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10% 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slider>.slider-child {
+            width: 80vw;
+            height: 450px;
+            border-radius: 250px;
+            position: absolute;
+            padding: 0 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 1s;
+        }
+
+        .slider>.slider-child:nth-of-type(1) {
+            left: 10%;
+            background-color: #fe6c4d;
+
+        }
+
+        .slider>.slider-child:nth-of-type(1)>img {
+            width: 430px;
+            height: auto;
+            object-fit: cover;
+            position: absolute;
+            right: 8%;
+            display: flex;
+            transition: 1.2s;
+            animation: anime 1.5s linear infinite;
+            z-index: 50;
+        }
+
+        .slider>.slider-child:nth-of-type(2) {
+            left: 95%;
+            background-color: #b450ff;
+        }
+
+        .slider>.slider-child:nth-of-type(2)>img {
+            width: 250px;
+            height: auto;
+            object-fit: cover;
+            position: absolute;
+            right: 15%;
+            display: none;
+            transition: 1.2s;
+            animation: anime 1.5s linear infinite;
+            z-index: 50;
+
+        }
+
+        .slider>.slider-child:nth-of-type(3) {
+            left: 180%;
+            margin-right: 5vw;
+            background-color: #fe56b8;
+        }
+
+        .slider>.slider-child:nth-of-type(3)>img {
+            width: 230px;
+            height: auto;
+            object-fit: cover;
+            position: absolute;
+            right: 15%;
+            display: none;
+            transition: 1.2s;
+            animation: anime 1.5s linear infinite;
+            z-index: 50;
+
+        }
+
+        @keyframes anime {
+            0% {
+                transform: translateY(5px);
+            }
+
+            40% {
+                transform: translateY(-5px);
+            }
+
+            50% {
+                transform: translateY(-5px);
+
+            }
+
+            90% {
+                transform: translateY(5px);
+
+            }
+
+            100% {
+                transform: translateY(5px);
+            }
+        }
+
+        /* circle  */
+        .circle {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background-color: aliceblue;
+            position: absolute;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: .8s;
+            cursor: pointer;
+        }
+
+        .circle:nth-of-type(1) {
+            left: 5%;
+            visibility: hidden;
+        }
+
+        .circle:nth-of-type(2) {
+            right: 5%;
+        }
+
+        /* txt  */
+        .txt {
+            width: 350px;
+            height: 300px;
+            position: absolute;
+            left: 20vw;
+            top: 25%;
+            display: flex;
+            justify-content: start;
+            align-content: center;
+            flex-wrap: wrap;
+        }
+
+        .txt>* {
+            display: flex;
+            width: 100%;
+            font-family: 'Varela Round', sans-serif;
+            color: white;
+        }
+
+        .txt>span:nth-of-type(1),
+        .title>span {
+            font-size: 65px;
+            text-transform: capitalize;
+        }
+
+        .txt>span:nth-of-type(2) {
+            width: 250px;
+            height: 80px;
+            padding: 15px 40px;
+            background-color: black;
+            border-radius: 100px;
+            font-size: 27px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: .4s;
+        }
+
+        .txt>span:nth-of-type(2):hover {
+            color: black;
+            background-color: white;
+            font-weight: bold;
+        }
+
+        /* part2  */
+        #part2 {
+            width: 100vw;
+            height: 45vh;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #part2>.title2 {
+            width: 75%;
+            height: 75%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #part2>.title2>* {
+
+            border: 1px solid black;
+        }
+
+        #part2>.title2>.left {
+            width: 40%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-wrap: wrap;
+        }
+
+        #part2>.title2>.left>div:nth-of-type(1) {
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            color: lightgrey;
+            font-weight: 100;
+            width: 100%;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            padding-left: 100px;
+            margin-bottom: 10px;
+        }
+
+        #part2>.title2>.left>div:nth-of-type(2) {
+            width: 100%;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            padding-left: 100px;
+        }
+
+        #part2>.title2>.left>div:nth-of-type(2)>div:nth-of-type(1) {
+            font-family: 'Varela Round', sans-serif;
+            font-size: 50px;
+            color: white;
+        }
+
+        .right {
+            width: 60%;
+            height: 100%;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            padding: 0 7%;
+            font-family: 'Varela Round', sans-serif;
+            color: lightgray;
+            line-height: 30px;
+            font-size: 20px;
+            transform: translateY(70px);
+            transition: 1s;
+        }
+        strong {
+            color: white;
+            background-color: rgba(0, 0, 0, 0);
+        }
+        /* part3  */
+        .part3{
+            width: 100vw;
+            height: 200vh;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-wrap: wrap;
+        }
+        .part3>section{
+            width: 75%;
+            height: 33.3333%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .part3>section>*{
+            width: 50%;
+            height: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            flex-wrap: nowrap !important;
+        }
+        .part3>section>div>p{
+            font-size: 35px;
+            text-transform: capitalize;
+            font-family: 'Varela Round', sans-serif;
+            color: white;
+            font-weight: bold;
+        }
+        .part3>section>div>img{
+            width: 100%;
+            height: 100%;
+            border-radius: 200px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: 1.2s;
+        }
+        #img1{
+            left: -100%;
+        }
+        .arrow{
+            font-weight: bold;
+            animation: anime1 1.5s linear infinite;
+            
+        }
+        @keyframes anime1 {
+            0% {
+                transform:translateY(10px) translateX(5px);
+            }
+
+            40% {
+                transform:translateY(10px) translateX(-5px);
+            }
+
+            50% {
+                transform:translateY(10px) translateX(-5px);
+
+            }
+
+            90% {
+                transform:translateY(10px) translateX(5px);
+
+            }
+
+            100% {
+                transform:translateY(10px) translateX(5px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- part1  saba-->
+    <nav>
+        <div class="bigMenu">
+            <ul>
+                <li>home</li>
+                <li>shop</li>
+                <li>about</li>
+                <li>contact</li>
+            </ul>
+        </div>
+        <!-- menu  -->
+        <header>
+            <div class="logo"><img src="img/logo.png" alt=""></div>
+            <div class="menu">
+                <span>
+                    <svg id="m1" xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                        class="bi bi-search" viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg></span>
+                <span>
+                    <svg id='m2' xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                        class="bi bi-bag" viewBox="0 0 16 16">
+                        <path
+                            d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
+                    </svg></span>
+                <span id="m3">Login</span>
+                <span id="menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-plus-lg" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                    </svg>
+                </span>
+            </div>
+        </header>
+        <!-- slider  -->
+        <div class="slider">
+            <span class="circle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor"
+                    class="bi bi-arrow-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+                </svg>
+            </span>
+            <span class="circle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor"
+                    class="bi bi-arrow-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                </svg>
+            </span>
+            <div class="slider-child"><img class="img" src="img/sofa-scene.png" alt=""></div>
+            <div class="slider-child"><img class="img" src="img/chair-scene.png" alt=""></div>
+            <div class="slider-child"><img class="img" src="img/lamp-scene.png" alt=""></div>
+            <div class="txt">
+                <div class="title">
+                    <span id="txt">sofa</span>
+                </div>
+                <span>collection</span>
+                <span>shop now</span>
+            </div>
+        </div>
+    </nav>
+    <!-- part2  saba-->
+    <div id="part2">
+        <div class="title2">
+            <div class="left">
+                <div>We are</div>
+                <div>
+                    <div>Dope good</div>
+                </div>
+            </div>
+            <div class="right">
+                <p>Since 1985, we've created extraordinary products. Our <strong>commitment is to quality</strong>, & we
+                    won't be satisfied until you are. Every product is <strong>crafted with love & care.</strong></p>
+            </div>
+        </div>
+    </div>
+    <!-- part3  saba-->
+    <div class="part3">
+        <section>
+            <div class="leftP3">
+                <p>featuered collection</p>
+            </div>
+            <div class="rightP3">
+                <p>chair collection
+                     <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                  </svg></p>
+                <img id="img" src="img/chair-featured-collection.jpg" alt="">
+            </div>
+        </section>
+        <section>
+            <div class="leftP3">
+                <p>sofa collection 
+                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                      </svg>
+                </p>
+            </div>
+            <div class="rightP3">
+                <p></p>
+                <img id="img1" src="img/sofa-featured-collection.jpg" alt="">
+            </div>
+        </section>
+        <section>
+            <div class="leftP3">
+                <p></p>
+            </div>
+            <div class="rightP3">
+                <p>lamp collection
+                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                      </svg>
+                </p>
+                <img id="img2" src="img/lamp-featured-collection.jpg" alt="">
+            </div>
+        </section>
+    </div>
+     <!-- part4  mobina-->
+     <section id="sec1">
+        <h2>New Arrivals</h2>
+        <div>
+          <div id="mslide">
+            <figure>
+              <span
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="26"
+                  height="26"
+                  fill="currentColor"
+                  class="bi bi-heart"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"
+                  /></svg></span
+              ><img src="./master/css/img/img (1).jpg" alt="" />
+              <figcaption></figcaption>
+            </figure>
+            <figure>
+              <span
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="26"
+                  height="26"
+                  fill="currentColor"
+                  class="bi bi-heart"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"
+                  /></svg></span
+              ><img src="./master/css/img/img (2).png" />
+              <figcaption>add to card</figcaption>
+            </figure>
+            <figure>
+              <span
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="26"
+                  height="26"
+                  fill="currentColor"
+                  class="bi bi-heart"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"
+                  /></svg></span
+              ><img src="./master/css/img/img (3).jpg" />
+              <figcaption>add to card</figcaption>
+            </figure>
+            <figure>
+              <span
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="26"
+                  height="26"
+                  fill="currentColor"
+                  class="bi bi-heart"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"
+                  /></svg></span
+              ><img src="./master/css/img/img (4).png" />
+              <figcaption>add to card</figcaption>
+            </figure>
+            <figure>
+              <span
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="26"
+                  height="26"
+                  fill="currentColor"
+                  class="bi bi-heart"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"
+                  /></svg></span
+              ><img src="./master/css/img/img (5).png" />
+              <figcaption>add to card</figcaption>
+            </figure>
+            <figure>
+              <span
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="26"
+                  height="26"
+                  fill="currentColor"
+                  class="bi bi-heart"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"
+                  /></svg></span
+              ><img src="./master/css/img/img (6).jpg" alt="" />
+              <figcaption>add to card</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+      <!-- part5  mobina  -->
+      <section id="sec2">
+        <span id="mspan"></span>
+        <div>
+          <div id="mdiv1">
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+          </div>
+          <div id="mdiv2">
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+          </div>
+          <div id="mdiv3">
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+            <figure></figure>
+          </div>
+        </div>
+      </section>
+      <!-- part6  mobina  -->
+      <section id="sec3">
+          <div>
+              <p>Free 🚀 Fast Shipping</p>
+              <figure id="mfig1"><img src="./master/css/img/why_1.webp" alt=""></figure>
+          </div>
+          <div>
+              <p>Customer 😊 Support</p>
+              <figure id="mfig2"><img src="./master/css/img/why_2.webp" alt=""></figure>
+          </div>
+          <div>
+              <p>Secure 🔒 Payment</p>
+              <figure id="mfig3"><img src="./master/css/img/why_3.webp" alt=""></figure>
+          </div>
+          <div>
+              <div id="mdiv4">
+                <figure>
+                  <img src="./master/css/img/p (1).jpg" alt="">
+                  <figcaption>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae corporis at, odit nemo distinctio quas consequuntur aliquam obcaecati dicta? Sapiente.</figcaption>
+                </figure>
+                <figure>
+                  <img src="./master/css/img/p (2).jpg" alt="">
+                  <figcaption>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt nisi accusamus inventore aut autem adipisci enim officia ex cupiditate obcaecati.</figcaption>
+                </figure>
+                <figure>
+                  <img src="./master/css/img/p (3).jpg" alt="">
+                  <figcaption>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae reprehenderit illum possimus molestiae nemo aut incidunt hic maxime impedit veniam!</figcaption>
+                </figure>
+                <figure>
+                  <img src="./master/css/img/p (4).jpg" alt="">
+                  <figcaption>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis, a debitis! Porro optio nemo ea a, quos nam id ipsam?</figcaption>
+                </figure>
+              </div>
+          </div>
+      </section>
+</body>
+<script src="js/master.js">
+   
+</script>
+
+</html>

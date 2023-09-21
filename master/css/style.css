@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Varela Round', sans-serif !important;
+  }
+  @font-face {
+    font-family: font;
+    src: url(../fonts/Quicksand-Bold.ttf);
+  }
+  #sec1 {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+  }
+  #sec1 > h2 {
+    width: 100%;
+    height: 200px;
+    /* border: 1px solid white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    font-family: font;
+    color: white;
+  }
+  #sec1 > div {
+    width: 100%;
+    height: 430px;
+    /* border: 1px solid palevioletred; */
+    display: flex;
+    align-items: center;
+  }
+  #sec1 > div > div {
+    display: flex;
+    /* border: 1px solid yellow; */
+    transform: translateX(-200px);
+    transition: 1s;
+  }
+  #sec1 > div > div > figure {
+    width: 250px;
+    height: 350px;
+    margin: 0 20px;
+    border-radius: 10px;
+    background-color: #101010;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  #sec1 > div > div > figure > span {
+    position: absolute;
+    display: flex;
+    width: 20px;
+    height: 20px;
+    right: 10px;
+    top: 10px;
+    color: #fff;
+  }
+  #sec1 > div > div > figure > img {
+    max-width: 90% !important;
+    max-height: 80% !important;
+    object-fit: cover;
+  }
+  #sec1 > div > div > figure > figcaption{
+    width: 150px;
+    height: 50px;
+    border-radius: 50px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E73C37;
+    transition: 0.5s;
+    color: white;
+    font-family: font;
+    top :100%;
+  }
+  #sec1 > div > div > figure:hover > figcaption{
+    top: 80%;
+  }
+  #sec2 {
+    width: 100%;
+    height: 100vh;
+    /* border: 1px solid red; */
+    position: relative;
+    display: flex;
+    overflow: hidden;
+  }
+  #sec2 > span {
+    display: flex;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+    position: fixed;
+    z-index: 999;
+    transition: 0.1s;
+  }
+  #sec2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    z-index: 997;
+    background-color: rgba(0, 0, 0, 0.564);
+  }
+  #sec2::after {
+    content: "Why Dopegood";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 90px;
+    color: white;
+    font-family: font;
+    z-index: 1000;
+    font-family: 'Varela Round', sans-serif40;
+
+
+  }
+  #sec2 > div {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+  }
+  #sec2 > div > div {
+    /* border: 1px solid orange; */
+    width: 2200px;
+    height: 214px;
+    display: flex;
+    align-items: center;
+    transform: rotate(10deg);
+    margin-bottom: 50px;
+    animation:  70s linear infinite forwards;
+    transition: 10s;
+    
+    /* animation: anime1 1s linear  infinite alternate; */
+  }
+  #sec2 > div > div:nth-of-type(2) {
+    animation:  30s linear infinite forwards;
+  }
+  #sec2 > div > div > figure {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 20px;
+    /* border: 1px solid blue; */
+    background-size: cover;
+  }
+  #sec2 > div > div > figure:nth-of-type(1),
+  #sec2 > div > div > figure:nth-of-type(3),
+  #sec2 > div > div > figure:nth-of-type(5) {
+    width: 500px;
+    border-radius: 100px;
+  }
+  #sec2 > div > div:nth-of-type(1) > figure:nth-of-type(1) {
+    background-image: url(./img/b\ \(1\).jpg );
+  }
+  #sec2 > div > div:nth-of-type(1) > figure:nth-of-type(2) {
+    background-image: url(./img/s1.jpg);
+  }
+  #sec2 > div > div:nth-of-type(1) > figure:nth-of-type(3) {
+    background-image: url(./img/b\ \(2\).jpg);
+  }
+  #sec2 > div > div:nth-of-type(1) > figure:nth-of-type(4) {
+    background-image: url(./img/s2.jpg);
+  }
+  #sec2 > div > div:nth-of-type(1) > figure:nth-of-type(5) {
+    background-image: url(./img/b\ \(3\).jpg);
+  }
+  #sec2 > div > div:nth-of-type(1) > figure:nth-of-type(6) {
+    background-image: url(./img/s3.jpg);
+  }
+  #sec2 > div > div:nth-of-type(2) > figure:nth-of-type(1) {
+    background-image: url(./img/b\ \(4\).jpg);
+  }
+  #sec2 > div > div:nth-of-type(2) > figure:nth-of-type(2) {
+    background-image: url(./img/s3.jpg);
+  }
+  #sec2 > div > div:nth-of-type(2) > figure:nth-of-type(3) {
+    background-image: url(./img/b\ \(5\).jpg);
+  }
+  #sec2 > div > div:nth-of-type(2) > figure:nth-of-type(4) {
+    background-image: url(./img/s2.jpg);
+  }
+  #sec2 > div > div:nth-of-type(2) > figure:nth-of-type(5) {
+    background-image: url(./img/b\ \(6\).jpg);
+  }
+  #sec2 > div > div:nth-of-type(2) > figure:nth-of-type(6) {
+    background-image: url(./img/s1.jpg);
+  }
+  #sec2 > div > div:nth-of-type(3) > figure:nth-of-type(1) {
+    background-image: url(./img/b\ \(7\).jpg);
+  }
+  #sec2 > div > div:nth-of-type(3) > figure:nth-of-type(2) {
+    background-image: url(./img/s2.jpg);
+  }
+  #sec2 > div > div:nth-of-type(3) > figure:nth-of-type(3) {
+    background-image: url(./img/b\ \(8\).jpg);
+  }
+  #sec2 > div > div:nth-of-type(3) > figure:nth-of-type(4) {
+    background-image: url(./img/s1.jpg);
+  }
+  #sec2 > div > div:nth-of-type(3) > figure:nth-of-type(5) {
+    background-image: url(./img/b\ \(9\).jpg);
+  }
+  #sec2 > div > div:nth-of-type(3) > figure:nth-of-type(6) {
+    background-image: url(./img/s3.jpg);
+  }
+
+
+  #sec3{
+    width: 100%;
+    background-color: black;
+    overflow: hidden;
+  }
+  #sec3 > div {
+    width: 100%;
+    height: 90vh;
+    /* border: 1px solid white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #sec3 > div > *{
+    width: 40%;
+    height: 80%;
+    border-radius: 20px;
+    margin: 0 20px;
+    transition: 1s;
+  }
+  #sec3 > div > p {
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    color: white;
+    font-family: font;
+    font-size: 30px;
+
+  }
+  #sec3 > div > figure > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+  #sec3 > div:nth-of-type(4) {
+    position: relative;
+  }
+  #sec3 > div:nth-of-type(4) > div {
+    position: absolute;
+    left: 0;
+    bottom: 80px;
+    display: flex;
+    width: 1500px;
+    height: 50%;
+    /* border: 1px solid tomato; */
+    transform: rotate(-5deg);
+  }
+  #sec3 > div:nth-of-type(4) > div > figure{
+    width: 350px;
+    height: 100%;
+    margin-right: 50px;
+    border-radius: 5px;
+    background-color: #101010;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 30px;
+  }
+  #sec3 > div:nth-of-type(4) > div > figure > img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+
+  }
+  #sec3 > div:nth-of-type(4) > div > figure > figcaption{
+    width: 100%;
+    color: #686868;
+    font-family: font;
+    text-align: center;
+  }
