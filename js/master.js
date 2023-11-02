@@ -1,5 +1,4 @@
-
-         //  ************************start of saba js part ***************************
+     //  ************************start of saba js part ***************************
  // part1 
     // slider 
     let _slider = document.querySelectorAll('.slider>.slider-child')
@@ -152,40 +151,67 @@
     })
     //  ************************finish of saba js part ***************************
     //  ************************start of mobina js part ***************************
-    document.addEventListener("mousemove", (e) => {
-        let x = e.clientX;
-        let y = e.clientY;
-        // console.log(x , y);
-        document.getElementById("mspan").style.left = x + "px";
-        document.getElementById("mspan").style.top = y + "px";
-      });
-      let wso = 0;
-      document.addEventListener("scroll", () => {
-        // console.log(window.scrollY);
-        let wsn = window.scrollY;
-        if (wsn > wso) {
-          mslide.style.transform = "translateX(-300px)";
-          mdiv1.style.transform = 'rotate(10deg) translate3d(800px, 0px, 0px)'
-          mdiv2.style.transform = 'rotate(10deg) translate3d(-800px, 0px, 0px)'
-          mdiv3.style.transform = 'rotate(10deg) translate3d(800px, 0px, 0px)'
-          mfig1.style.transform = "translateX("+ (wsn/10)+"px)";
-          mfig2.style.transform = "translateX("+ -(wsn/6)+"px)";
-          mfig3.style.transform = "translateX("+ -(wsn/30)+"px)";
-          mdiv4.style.transform = 'rotate(-5deg) translateX('+ wsn/100 +'px)'
+  document.addEventListener("mousemove", (e) => {
+    let x = e.clientX;
+    let y = e.clientY;
+    // console.log(x , y);
+    document.getElementById("mspan").style.left = x + "px";
+    document.getElementById("mspan").style.top = y + "px";
+  });
+  let wso = 0;
+  document.addEventListener("scroll", () => {
+    // console.log(window.scrollY);
+    let wsn = window.scrollY;
+    if ((wsn-300) > wso) {
+      mslide.style.transform = "translateX(-300px)";
+      mdiv1.style.transform = 'rotate(10deg) translate3d(800px, 0px, 0px)'
+      mdiv2.style.transform = 'rotate(10deg) translate3d(-800px, 0px, 0px)'
+      mdiv3.style.transform = 'rotate(10deg) translate3d(800px, 0px, 0px)'
+      mfig1.style.transform = "translateX("+ (50)+"%)";
+      mdiv4.style.transform = 'rotate(-5deg) translateX('+ wsn/200 +'px)'
+   
+    } else {
+      mslide.style.transform = "translateX(-200px)";
+      mdiv1.style.transform = 'rotate(10deg) translate3d(-800px, 0px, 0px)'
+      mdiv2.style.transform = 'rotate(10deg) translate3d(800px, 0px, 0px)'
+      mdiv3.style.transform = 'rotate(10deg) translate3d(-800px, 0px, 0px)'
+      mfig1.style.transform = "translateX("+ (0)+"%)";
+      mdiv4.style.transform = 'rotate(-5deg) translateX('+ -(wsn/44) +'px)'
+    }
+
+  if ((wsn-300) > wso) {
+    mslide.style.transform = "translateX(-300px)";
+    mdiv1.style.transform = 'rotate(10deg) translate3d(800px, 0px, 0px)'
+    mdiv2.style.transform = 'rotate(10deg) translate3d(-800px, 0px, 0px)'
+    mdiv3.style.transform = 'rotate(10deg) translate3d(800px, 0px, 0px)'
+    mfig2.style.transform = "translateX("+ (50)+"%)";
+    mdiv4.style.transform = 'rotate(-5deg) translateX('+ wsn/200 +'px)'
     
-          
-        } else {
-          mslide.style.transform = "translateX(-200px)";
-          mdiv1.style.transform = 'rotate(10deg) translate3d(-800px, 0px, 0px)'
-          mdiv2.style.transform = 'rotate(10deg) translate3d(800px, 0px, 0px)'
-          mdiv3.style.transform = 'rotate(10deg) translate3d(-800px, 0px, 0px)'
-          mfig1.style.transform = "translateX("+ -(wsn/10)+"px)";
-          mfig2.style.transform = "translateX("+ (wsn/18)+"px)";
-          mfig3.style.transform = "translateX("+ (wsn/10)+"px)";
-          mdiv4.style.transform = 'rotate(-5deg) translateX('+ -(wsn/22) +'px)'
-        }
-        wso = wsn;
-      });
+  } else {
+    mslide.style.transform = "translateX(-200px)";
+    mdiv1.style.transform = 'rotate(10deg) translate3d(-800px, 0px, 0px)'
+    mdiv2.style.transform = 'rotate(10deg) translate3d(800px, 0px, 0px)'
+    mdiv3.style.transform = 'rotate(10deg) translate3d(-800px, 0px, 0px)'
+    mfig2.style.transform = "translateX("+ (0)+"%)";
+    mdiv4.style.transform = 'rotate(-5deg) translateX('+ -(wsn/44) +'px)'
+  }
+
+if ((wsn-300) > wso) {
+    mslide.style.transform = "translateX(-300px)";
+    mdiv1.style.transform = 'rotate(10deg) translate3d(800px, 0px, 0px)'
+    mdiv2.style.transform = 'rotate(10deg) translate3d(-800px, 0px, 0px)'
+    mdiv3.style.transform = 'rotate(10deg) translate3d(800px, 0px, 0px)'
+    mfig3.style.transform = "translateX("+ (50)+"%)";
+    mdiv4.style.transform = 'rotate(-5deg) translateX('+ wsn/200 +'px)'
     
-    
+  } else {
+    mslide.style.transform = "translateX(-200px)";
+    mdiv1.style.transform = 'rotate(10deg) translate3d(-800px, 0px, 0px)'
+    mdiv2.style.transform = 'rotate(10deg) translate3d(800px, 0px, 0px)'
+    mdiv3.style.transform = 'rotate(10deg) translate3d(-800px, 0px, 0px)'
+    mfig3.style.transform = "translateX("+ (0)+"%)";
+    mdiv4.style.transform = 'rotate(-5deg) translateX('+ -(wsn/44) +'px)'
+  }
+  wso = wsn;
+});
   //  ************************finish of mobina js part ***************************
