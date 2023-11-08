@@ -6,8 +6,9 @@
 
 
 - [Demo Project](https://saba-aghajani-developer.github.io/groupProject/)
+- Group Project with [Mobina Daneshvar](https://github.com/mobinadanshvarweb)
 
-- Developed by Saba Aghajani
+- Developed by Saba Aghajani and Mobina Daneshvar
   
 - Technologies Used - Html5, Css3, Java Script
 
